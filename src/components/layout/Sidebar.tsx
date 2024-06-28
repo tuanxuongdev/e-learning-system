@@ -1,8 +1,8 @@
 import React from "react";
-import IconPlay from "../icons/IconPlay";
-import IconExplore from "../icons/IconExplore";
 import { menuItems } from "@/constants";
 import Link from "next/link";
+import ActiveLink from "../common/ActiveLink";
+import { TMenuItem } from "@/types";
 
 const Sidebar = () => {
   return (
@@ -24,24 +24,13 @@ const Sidebar = () => {
   );
 };
 
-function MenuItem({
-  url = "/",
-  title = "",
-  icon,
-}: {
-  url: string;
-  title: string;
-  icon?: React.ReactNode;
-}) {
+function MenuItem({ url = "/", title = "", icon }: TMenuItem) {
   return (
     <li>
-      <Link
-        href={url}
-        className="p-3 rounded-md flex items-center gap-3 hover:text-primary  hover:bg-primary hover:bg-opacity-10 transition-all "
-      >
+      <ActiveLink url={url}>
         {icon}
         {title}
-      </Link>
+      </ActiveLink>
     </li>
   );
 }
