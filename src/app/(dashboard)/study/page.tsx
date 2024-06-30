@@ -1,16 +1,19 @@
 import CourseItem from "@/components/Course/CourseItem";
 import { CourseGrid } from "@/components/common";
 import Heading from "@/components/typography/Heading";
+import React from "react";
 
-export default async function Home() {
+const page = () => {
   return (
-    <div>
-      <Heading>Khám phá</Heading>
+    <>
+      <Heading>Khu vực học tập</Heading>
       <CourseGrid>
         <CourseItem></CourseItem>
         <CourseItem></CourseItem>
         <CourseItem></CourseItem>
       </CourseGrid>
-    </div>
+    </>
   );
-}
+};
+
+export default page;

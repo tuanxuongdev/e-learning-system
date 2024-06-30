@@ -1,12 +1,14 @@
 import React from "react";
 import { menuItems } from "@/constants";
 import Link from "next/link";
-import ActiveLink from "../common/ActiveLink";
 import { TMenuItem } from "@/types";
+import { ActiveLink } from "../common";
+import { UserButton } from "@clerk/nextjs";
+import { ModeToggle } from "../common/ModeToggle";
 
 const Sidebar = () => {
   return (
-    <div className="p-5 border-r border-r-gray-200 ">
+    <div className="p-5 border-r border-r-gray-200 bg-white flex flex-col dark:bg-grayDarker dark:border-opacity-10">
       <Link href="/" className="font-bold text-3xl inline-block mb-5">
         Ucademy
       </Link>
@@ -20,6 +22,10 @@ const Sidebar = () => {
           ></MenuItem>
         ))}
       </ul>
+      <div className="mt-auto flex items-center justify-end gap-2">
+        <ModeToggle></ModeToggle>
+        <UserButton />
+      </div>
     </div>
   );
 };

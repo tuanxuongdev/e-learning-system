@@ -1,4 +1,11 @@
-import { IconExplore, IconPlay } from "@/components/icons";
+import {
+  IconExplore,
+  IconPlay,
+  IconComment,
+  IconOrder,
+  IconStudy,
+  IconUsers,
+} from "@/components/icons";
 
 export const menuItems: {
   url: string;
@@ -7,12 +14,32 @@ export const menuItems: {
 }[] = [
   {
     url: "/",
-    title: "Khu vực học tập",
+    title: "Khám phá",
     icon: <IconPlay className="size-5" />,
   },
   {
-    url: "/explore",
-    title: "Khám phá",
+    url: "/study",
+    title: "Khu vực học tập",
+    icon: <IconStudy className="size-5" />,
+  },
+  {
+    url: "/manage/course",
+    title: "Quản lý khóa học",
     icon: <IconExplore className="size-5" />,
+  },
+  {
+    url: "/manage/member",
+    title: "Quản lý thành viên",
+    icon: <IconUsers className="size-5" />,
+  },
+  {
+    url: "/manage/order",
+    title: "Quản lý đơn hàng",
+    icon: <IconOrder className="size-5" />,
+  },
+  {
+    url: "/manage/comment",
+    title: "Quản lý bình luận",
+    icon: <IconComment className="size-5" />,
   },
 ];
