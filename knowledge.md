@@ -90,3 +90,30 @@ hook usePathname() trả ra pathname giúp chúng ta xử lý trong những trư
   Parallel Routes
   Intercepting Routes
   Lưu ý: Khi để 2 thư mục dynamic cùng cấp sẽ báo lỗi ví dụ [item] cùng cấp với [folder]
+
+Next/Image
+
+- Image yêu cầu có 3 thuộc tính bắt buộc là alt, width, height
+  Nếu sử dụng thuộc tính fill thì ko cần width và height vẫn hoạt động. Tuy nhiên thẻ img sẽ trở thành absolute, cho nên cần có 1 phần tử chứa nó sử dụng position: relative hoặc absolute tùy vào mục đích code.
+  Khi sử dụng src từ bên ngoài thì phải thiết lập trong next.config.mjs ví dụ
+  images: {
+  remotePatterns: [
+  {
+  protocol: "https",
+  hostname: "images.unsplash.com",
+  port: "",
+  pathname: "/**",
+  },
+  ],
+  },
+
+Mongoose
+
+- Schema trong Mongoose là một đối tượng xác định cấu trúc của tài liệu (document) trong một collection của MongoDB. Nó cho phép định nghĩa các trường (fields), kiểu dữ liệu (data types) và các ràng buộc (constraints) cho dữ liệu
+  Ví dụ: Collection users có document là
+  {
+  id: "1",
+  name: "evondev"
+  }
+
+=>Schema trong Mongoose là một đối tượng xác định cấu trúc của tài liệu (document) . thêm document vào trong collection (thêm cột vào bảng trong sql) thì nó tuân thủ theo cấu trúc Schema ví dụ :const userSchema = new Schema<IUser>({});
